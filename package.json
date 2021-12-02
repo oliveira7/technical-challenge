@@ -1,0 +1,29 @@
+{
+  "name": "technical-challenge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oliveira7/technical-challenge.git"
+  },
+  "author": "Yuri Oliveira",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oliveira7/technical-challenge/issues"
+  },
+  "homepage": "https://github.com/oliveira7/technical-challenge#readme",
+  "dependencies": {
+    "config": "^3.3.6",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "redis": "^4.0.0"
+  },
+  "devDependencies": {
+    "jest": "^27.4.3"
+  }
+}
