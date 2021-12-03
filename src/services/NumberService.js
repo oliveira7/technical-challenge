@@ -1,48 +1,40 @@
 class NumberService {
   constructor() {}
 
-  async divider(number) {
-    try {
-      let dividerValues = [];
+  divider(number) {
+    let dividerValues = [];
 
-      for (let i = 1; i <= number; i++) {
-        if (number % i === 0) {
-          dividerValues.push(i);
-        }
+    for (let i = 1; i <= number; i++) {
+      if (number % i === 0) {
+        dividerValues.push(i);
       }
-
-      return dividerValues;
-    } catch (err) {
-      throw err;
     }
+
+    return dividerValues;
   }
 
-  async prime(dividerValues) {
-    try {
-      let primeValues = [];
+  prime(dividerValues) {
+    let primeValues = [];
 
-      function verifyPrimeNumber(init, number) {
-        if (number === init) {
-          return 0;
+    function verifyPrimeNumber(init, number) {
+      if (number === init) {
+        return 0;
+      } else {
+        if (number % init == 0 || number === 1) {
+          return 1;
         } else {
-          if (number % init == 0 || number === 1) {
-            return 1;
-          } else {
-            return verifyPrimeNumber(init + 1, number);
-          }
+          return verifyPrimeNumber(init + 1, number);
         }
       }
-
-      dividerValues.forEach((number) => {
-        if (verifyPrimeNumber(2, number) == 0) {
-          primeValues.push(number);
-        }
-      });
-
-      return primeValues;
-    } catch (err) {
-      throw err;
     }
+
+    dividerValues.forEach((number) => {
+      if (verifyPrimeNumber(2, number) == 0) {
+        primeValues.push(number);
+      }
+    });
+
+    return primeValues;
   }
 }
 
