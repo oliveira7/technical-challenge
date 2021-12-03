@@ -3,20 +3,32 @@ class NumberService {
 
   divider(number) {
     let dividerValues = [];
+    let squareRoot = Math.sqrt(number);
 
-    for (let i = 1; i <= number; i++) {
-      if (number % i === 0) {
-        dividerValues.push(i);
+    for (let i = 1; i <= squareRoot; i++) {
+      if (number % i == 0) {
+        if (parseInt(number / i) == i) {
+          dividerValues.push(i);
+        } else {
+          dividerValues.push(i, parseInt(number / i));
+        }
       }
     }
 
-    return dividerValues;
+    return dividerValues.sort((a, b) => a - b);
   }
 
   prime(dividerValues) {
     let primeValues = [];
 
-    function verifyPrimeNumber(init, number) {
+  //   const isPrime = num => {
+  //     for(let i = 2, s = Math.sqrt(num); i <= s; i++)
+  //         if(num % i === 0) return false; 
+  //     return num > 1;
+  // }
+
+  
+    const verifyPrimeNumber = (init, number) => {
       if (number === init) {
         return 0;
       } else {
@@ -26,7 +38,7 @@ class NumberService {
           return verifyPrimeNumber(init + 1, number);
         }
       }
-    }
+    };
 
     dividerValues.forEach((number) => {
       if (verifyPrimeNumber(2, number) == 0) {

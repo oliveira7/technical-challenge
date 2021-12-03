@@ -6,10 +6,15 @@ module.exports = {
     try {
       const { number } = req.query;
       const regexNumber =  new RegExp('^[0-9]+$');
-  
+      const regexMaxNumber =  new RegExp('[9]{9}$');
+
       if (!regexNumber.test(number)) {
         throw new Error("Número inválido!");
       }
+
+      // if(regexMaxNumber.test(number)){
+      //   throw new Error("Sistema não suporta o tamanho do número!");
+      // }
 
       const dividerValues = await NumberServiceInstance.divider(number);
       const primeValues = await NumberServiceInstance.prime(dividerValues);

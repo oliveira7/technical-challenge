@@ -2,7 +2,7 @@ const App = require("../../src/App");
 const request = require("supertest");
 
 describe("numberController", () => {
-  it("index success", async () => {
+  it("Get /numbers request flow success", async () => {
     const response = await request(App.app)
       .get("/numbers")
       .query({ number: 45 });
@@ -13,7 +13,7 @@ describe("numberController", () => {
     expect(response.status).toBe(200);
   });
 
-  it("index failure", async () => {
+  it("Get /numbers request flow failure", async () => {
     const response = await request(App.app)
       .get("/numbers")
       .query({ number: "qualquerstring" });
