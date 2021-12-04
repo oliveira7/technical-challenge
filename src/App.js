@@ -15,7 +15,7 @@ class App {
   enableCors() {
     const options = {
       origin: "*",
-      methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+      methods: "GET",
       preflightContinue: false,
       optionsSuccessStatus: 204,
     };
@@ -30,7 +30,7 @@ class App {
   }
 
   routes() {
-    this.app.use("/", numberRouter);
+    this.app.use("/v1/api", numberRouter);
   }
 }
 

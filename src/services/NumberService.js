@@ -26,10 +26,8 @@ class NumberService {
     for (let i = 0; i < size + 1; i++) marked[i] = false;
 
     for (let i = 1; i <= size; i++)
-      for (let j = i; i + j + 2 * i * j <= size; j++) {
+      for (let j = i; i + j + 2 * i * j <= size; j++)
         marked[i + j + 2 * i * j] = true;
-        console.log("TS");
-      }
 
     for (let i = 1; i <= size; i++)
       if (marked[i] == false) primeValues.push(2 * i + 1);
