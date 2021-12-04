@@ -19,32 +19,18 @@ class NumberService {
   }
 
   prime(dividerValues) {
+    let size = (dividerValues.length - 1) / 2;
     let primeValues = [];
+    let marked = [];
 
-  //   const isPrime = num => {
-  //     for(let i = 2, s = Math.sqrt(num); i <= s; i++)
-  //         if(num % i === 0) return false; 
-  //     return num > 1;
-  // }
+    for (let i = 0; i < size + 1; i++) marked[i] = false;
 
-  
-    const verifyPrimeNumber = (init, number) => {
-      if (number === init) {
-        return 0;
-      } else {
-        if (number % init == 0 || number === 1) {
-          return 1;
-        } else {
-          return verifyPrimeNumber(init + 1, number);
-        }
-      }
-    };
+    for (let i = 1; i <= size; i++)
+      for (let j = i; i + j + 2 * i * j <= size; j++)
+        marked[i + j + 2 * i * j] = true;
 
-    dividerValues.forEach((number) => {
-      if (verifyPrimeNumber(2, number) == 0) {
-        primeValues.push(number);
-      }
-    });
+    for (let i = 1; i <= size; i++)
+      if (marked[i] == false) primeValues.push(2 * i + 1);
 
     return primeValues;
   }

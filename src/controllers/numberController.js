@@ -2,22 +2,17 @@ const NumberService = require("../services/NumberService");
 const NumberServiceInstance = new NumberService();
 
 module.exports = {
-  async index(req, res, next) {
+  index(req, res, next) {
     try {
       const { number } = req.query;
-      const regexNumber =  new RegExp('^[0-9]+$');
-      const regexMaxNumber =  new RegExp('[9]{9}$');
+      const regexNumber = new RegExp("^[0-9]+$");
 
       if (!regexNumber.test(number)) {
         throw new Error("Número inválido!");
       }
 
-      // if(regexMaxNumber.test(number)){
-      //   throw new Error("Sistema não suporta o tamanho do número!");
-      // }
-
-      const dividerValues = await NumberServiceInstance.divider(number);
-      const primeValues = await NumberServiceInstance.prime(dividerValues);
+      const dividerValues = NumberServiceInstance.divider(number);
+      const primeValues = NumberServiceInstance.prime(dividerValues);
 
       res
         .status(200)
