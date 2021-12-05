@@ -1,5 +1,5 @@
 {
-  "openapi": "3.0.1",
+  "openapi": "3.0.0",
   "info": {
     "title": "Technical Challenge API",
     "description": "API para encontrar os divisores de um número e definir os seus números primos.",

@@ -1,5 +1,4 @@
 version: '3.8'
-
 services:
   api:
     build:
@@ -8,5 +7,6 @@ services:
     image: yuri/technical-challenge
     container_name: technical-challenge
     ports: 
-      - '3000:3000'
+      - "${PORT}:${PORT}"
+    command: npm run start
   

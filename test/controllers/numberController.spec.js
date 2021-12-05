@@ -4,7 +4,7 @@ const request = require("supertest");
 describe("numberController", () => {
   it("Get /numbers request flow success", async () => {
     const response = await request(App.app)
-      .get("/numbers")
+      .get("/v1/api/numbers")
       .query({ number: 45 });
 
     expect(response.body).toHaveProperty("number");
@@ -15,7 +15,7 @@ describe("numberController", () => {
 
   it("Get /numbers request flow failure", async () => {
     const response = await request(App.app)
-      .get("/numbers")
+      .get("/v1/api/numbers")
       .query({ number: "qualquerstring" });
 
     expect(response.body).toHaveProperty("message");
