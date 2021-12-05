@@ -3,13 +3,16 @@
 </h3>
 
 <p align="center">Este serviço tem por finalidade calcular os divisores de um número e também quais desses divisores são números primos. 
-
 </p>
 
 ## 🔍 Observações
 - Existe testes de unidade para o único *endpoint-get* da aplicação, para testar basta rodar `npm run test`;  
-- 
-- Para verificar a documentação interativa, acesse o [swagger-tools](https://editor.swagger.io/?_ga=2.212359571.625017621.1638732803-424108789.1638572553#) e cole o json que está dentro da pasta **docs** do projeto.
+- Para verificar a documentação interativa, acesse o [swagger-tools](https://editor.swagger.io/?_ga=2.212359571.625017621.1638732803-424108789.1638572553#) e cole o json que está dentro da pasta **docs** do projeto;
+- A função para achar primos foi baseada no algoritmo de [Sieve of Sundaram](https://en.wikipedia.org/wiki/Sieve_of_Sundaram).
+
+<p align="center">
+  <img width="460" height="300" src="docs\algoritmo-sieve.png">
+</p>
 
 ## 👾 Tecnologias
 - ⚡ Express — A web framework for Node.js
@@ -30,4 +33,7 @@
 
 ## 🤓 Fluxo da aplicação
 
-![Screenshot](/docs/fluxo.png)
+<p align="center">
+  <img width="460" height="300" src="docs\fluxo.png">
+</p>
+
