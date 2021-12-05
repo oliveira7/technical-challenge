@@ -1,0 +1,35 @@
+{
+	"info": {
+		"_postman_id": "eb07bd9c-0639-4979-9414-d7b5a1a548c2",
+		"name": "tech-challenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get Divisors/Prime",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/v1/api/numbers?number=45",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"api",
+						"numbers"
+					],
+					"query": [
+						{
+							"key": "number",
+							"value": "45"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
