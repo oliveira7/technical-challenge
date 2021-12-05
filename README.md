@@ -25,11 +25,11 @@
 ## 💥 Instalação e execução
 
 1. Faça um clone desse repositório;
-2. Renomeie o .env-exemple para .env e defina uma porta;
+2. Renomeie o **.env-exemple** para **.env** e defina uma porta;
 3. Entre na pasta do projeto;
-4. Rode `docker-compose up -d` para subir os containers;
+4. Rode `docker-compose up -d` para subir o *container*;
 5. Importe o [json](https://www.postman.com/collections/26a1eb8eeaf0cfa4dcca) desse repositório no postman(via link);
-6. Agora é testar passando um *number* no query params da requisição(coloque a porta definida no .env no endpoint).
+6. Para testar é só passar um *number* no *query params* da requisição(coloque a porta definida no .env no *endpoint*).
 
 ## 🤓 Fluxo da aplicação
 
